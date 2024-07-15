@@ -1,14 +1,14 @@
 
 #include <stdio.h>
-// Function to return the maximum of two integers
+
 int max(int a, int b) {
 return (a > b) ? a : b;
 }
-// Function to solve the 0/1 Knapsack problem using Dynamic Programming
+
 int knapsack(int W, int weight[], int value[], int n) {
 int i, w;
 int dp[n+1][W+1];
-// Build the dp table in bottom-up manner
+
 for (i = 0; i <= n; i++) {
 for (w = 0; w <= W; w++) {
 if (i == 0 || w == 0)
@@ -19,7 +19,7 @@ else
 dp[i][w] = dp[i-1][w];
 }
 }
-// The maximum value that can be obtained with the given capacity
+
 return dp[n][W];
 }
 int main() {
